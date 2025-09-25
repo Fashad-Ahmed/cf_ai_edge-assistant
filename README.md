@@ -1,5 +1,14 @@
 # cf_ai_edge-assistant
 
+Edge-native chatbot powered by Cloudflare AI. Features:
+
+- Serverless deployment with Cloudflare Workers.
+- Session persistence using KV and Durable Objects.
+- AI responses via Cloudflare AI (with local fallback for dev).
+- TypeScript codebase for robust and maintainable development.
+- Ready-to-use REST API endpoint for integration in web apps.
+
+Perfect for experimenting with AI at the edge or building lightweight chat interfaces without a dedicated backend.
 ## What this project is
 An AI-powered edge chat assistant built on Cloudflare:
 - LLM: Llama 3.3 via Workers AI.
