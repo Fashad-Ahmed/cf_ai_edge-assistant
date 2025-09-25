@@ -1,0 +1,8 @@
+{
+  "name": "cf_ai_edge-assistant",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Fashad-Ahmed/cf_ai_edge-assistant.git",
+  "author": "Fashad-Ahmed <fashad.ahmed20@gmail.com>",
+  "license": "MIT"
+}
