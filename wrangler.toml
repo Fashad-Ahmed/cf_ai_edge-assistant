@@ -1,0 +1,17 @@
+name = "cf_ai_edge-assistant"
+main = "worker/src/index.ts"
+compatibility_date = "2025-09-25"
+account_id = "673c6995947b15d291e737f6900dd3ac"
+
+[[bindings]]
+name = "AI"
+type = "ai"
+model = "@cf/meta/llama-3.3-70b-instruct-fp8-fast"
+
+[[kv_namespaces]]
+binding = "CHAT_KV"
+id = "e593114c251b4a4fa0539ddb8342d5a9"
+
+[[durable_objects.bindings]]
+name = "CHAT_SESSION"
+class_name = "ChatSession"
