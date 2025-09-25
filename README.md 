@@ -1,0 +1,46 @@
+# cf_ai_edge-assistant
+
+## What this project is
+An AI-powered edge chat assistant built on Cloudflare:
+- LLM: Llama 3.3 via Workers AI.
+- Coordination: Durable Objects + Cloudflare Workflows.
+- Frontend: Cloudflare Pages (React chat UI).
+- Memory: Workers KV (conversation history and short-term user memory).
+
+## Features
+- Real-time chat (WebSocket via Durable Objects).
+- Context-aware responses using Llama 3.3.
+- Persistent memory in Workers KV (per-user notes + conversation index).
+- Background workflow to compute embeddings and index messages for retrieval.
+
+## How to run (local + deploy)
+Prereqs:
+- Node >= 18, npm or yarn
+- Wrangler CLI (`npm i -g wrangler`)
+- Cloudflare account + API token with Workers/Pages permissions
+
+1. Clone & name your repo on GitHub
+2. Configure environment:
+   - `wrangler login` (or `CLOUDFLARE_API_TOKEN` env var)
+   - Set `ACCOUNT_ID` and `ZONE_ID` in `wrangler.toml`
+3. Install:
+   - `cd frontend && npm install`
+   - `cd worker && npm install`
+4. Local dev:
+   - Start the frontend dev server (Pages preview/local)
+   - Start Worker in dev (`wrangler dev worker/src/index.ts`)
+5. Deploy:
+   - `wrangler publish --env production` for Worker
+   - Deploy Pages via `wrangler pages publish` or connect repo in Cloudflare Pages UI
+
+## Files to check before submission
+- `README.md` (this file)
+- `PROMPTS.md` (contains all used prompts)
+- `wrangler.toml` (Worker + AI bindings)
+- `frontend` and `worker` code
+
+## Notes / References
+- Workers AI Llama 3.3 usage: https://developers.cloudflare.com/workers-ai/models/llama-3.3-70b-instruct-fp8-fast/  [oai_citation:5‡Cloudflare Docs](https://developers.cloudflare.com/workers-ai/models/llama-3.3-70b-instruct-fp8-fast/?utm_source=chatgpt.com)
+- Durable Objects & realtime: https://developers.cloudflare.com/durable-objects/  [oai_citation:6‡Cloudflare Docs](https://developers.cloudflare.com/durable-objects/?utm_source=chatgpt.com)
+- Workers KV docs: https://developers.cloudflare.com/kv/  [oai_citation:7‡Cloudflare Docs](https://developers.cloudflare.com/kv/?utm_source=chatgpt.com)
+- Cloudflare Workflows: https://developers.cloudflare.com/workflows/  [oai_citation:8‡Cloudflare Docs](https://developers.cloudflare.com/workflows/?utm_source=chatgpt.com)
